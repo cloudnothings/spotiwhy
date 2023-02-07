@@ -20,9 +20,9 @@ declare module "next-auth" {
     user: {
       id: string;
       jwt: {
-        access_token: string | null;
-        expires_at: number | null;
-        refresh_token: string | null;
+        accessToken: string | null;
+        expiresAt: number | null;
+        refreshToken: string | null;
       };
       // ...other properties
       // role: UserRole;
@@ -75,7 +75,6 @@ async function refreshAccessToken(token: Token) {
     return {
       ...token,
       accessToken: data.access_token,
-      accessTokenExpires: Date.now() + data.expires_at * 1000,
       refreshToken: data.refresh_token ?? token.refreshToken, // Fall back to old refresh token
     };
   } catch (error) {
@@ -105,7 +104,7 @@ export const authOptions: NextAuthOptions = {
         };
       }
       // Return previous token if the access token has not expired yet
-      if (Date.now() < (token.accessTokenExpires as number)) {
+      if (Date.now() < (token.exp as number) * 1000) {
         return token;
       }
       console.log("refreshing token");
@@ -116,9 +115,9 @@ export const authOptions: NextAuthOptions = {
       if (session) {
         if (token && token.accessToken && token.expiresAt && token.refreshToken)
           session.user.jwt = {
-            access_token: token.accessToken as string,
-            expires_at: token.expiresAt as number,
-            refresh_token: token.refreshToken as string,
+            accessToken: token.accessToken as string,
+            expiresAt: token.expiresAt as number,
+            refreshToken: token.refreshToken as string,
           };
         if (profile) {
           session.user.id = profile.id;

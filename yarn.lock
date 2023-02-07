@@ -256,6 +256,11 @@
   resolved "https://registry.yarnpkg.com/@types/semver/-/semver-7.3.13.tgz#da4bfd73f49bd541d28920ab0e2bf0ee80f71c91"
   integrity sha512-21cFJr9z3g5dW8B0CVI9g2O9beqaThGQ6ZFBqHfwhzLDKUxaqTIy3vnfah/UPkfOiF2pLq+tGz+W8RyCskuslw==
 
+"@types/spotify-api@^0.0.20":
+  version "0.0.20"
+  resolved "https://registry.yarnpkg.com/@types/spotify-api/-/spotify-api-0.0.20.tgz#04486807175f7acfba3540213b5a4ca2a8270bd7"
+  integrity sha512-HRBwiOthYAT0r/vUQlGlNTdXMnPg/CS3MzTuQKDy2PtalUDXhj0Ep9YZ4tXmL68K0j7FMcLFcYTzy7k7nVu5mg==
+
 "@typescript-eslint/eslint-plugin@^5.47.1":
   version "5.51.0"
   resolved "https://registry.yarnpkg.com/@typescript-eslint/eslint-plugin/-/eslint-plugin-5.51.0.tgz#da3f2819633061ced84bb82c53bba45a6fe9963a"
@@ -2304,6 +2309,11 @@ source-map-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/source-map-js/-/source-map-js-1.0.2.tgz#adbc361d9c62df380125e7f161f71c826f1e490c"
   integrity sha512-R0XvVJ9WusLiqTCEiGCmICCMplcCkIwwR11mOSD9CR5u+IXYdiseeEuXCVAjS54zqwkLcPNnmU4OeJ6tUrWhDw==
+
+spotify-types@^1.0.7:
+  version "1.0.7"
+  resolved "https://registry.yarnpkg.com/spotify-types/-/spotify-types-1.0.7.tgz#59c2e16da2ae18b8adb97e07a9e378d8567f4464"
+  integrity sha512-X2n0MYNUpgakGDU7h/vzTvqVJh2f8kAWE9SG5TkJtf3lJcorndK24/8/6+D7Uww8tqUD1VPHg5Lqv4usdVJUvg==
 
 stop-iteration-iterator@^1.0.0:
   version "1.0.0"
