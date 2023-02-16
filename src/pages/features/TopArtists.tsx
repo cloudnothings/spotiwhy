@@ -2,6 +2,7 @@ import { useAutoAnimate } from "@formkit/auto-animate/react";
 import { api } from "../../utils/api";
 import { Artist } from "spotify-types/typings/artist";
 import { useSession } from "next-auth/react";
+import Image from "next/image";
 
 const TopArtists: React.FC = () => {
   const { data: sessionData } = useSession();
@@ -27,10 +28,13 @@ const TopArtists: React.FC = () => {
 };
 
 const Artist = ({ artist }: { artist: Artist }) => {
+  if (!artist.images[0]) return null;
   return (
-    <div className="flex flex-col items-center justify-center bg-black rounded-b-md">
-      <img className="h-48" src={artist.images[0]?.url} alt={artist.name} />
-      <p className="text-center text-2xl pb-1 text-white">{artist.name}</p>
+    <div className="flex shadow-lg flex-col items-center w-48 justify-center bg-black rounded-b-md">
+      <div className="p-1">
+        <Image className="object-cover aspect-square" width={800} height={800} src={artist.images[0].url} alt={artist.name} />
+      </div>
+      <div className="text-2xl pb-1 text-white overflow-ellipsis">{artist.name}</div>
     </div>
   );
 };
